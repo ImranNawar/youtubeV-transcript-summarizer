@@ -50,7 +50,8 @@ def extract_transcript_details(youtube_video_url):
 # generate detailed content using Google's Gemini Pro model based on provided transcript text and a prompt.
 def generate_gemini_content(transcript_text, prompt):
 
-  model=genai.GenerativeModel("gemini-pro")
+#   model=genai.GenerativeModel("gemini-pro")
+  model=genai.GenerativeModel("gemini-2.0-flash")
   response=model.generate_content(prompt+transcript_text)
   return response.text
 
