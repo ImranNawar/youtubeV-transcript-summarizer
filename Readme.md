@@ -32,14 +32,19 @@ Follow these steps to set up the project:
     pip install -r requirements.txt
     ```
 
-4. **Generater you own Google's Gemini API key**
+4. **Generate your own Google's Gemini API key** [🔗](https://aistudio.google.com/apikey)  
    ```sh
-   # Replace GOOGLE_API_KEY with your own Gemini API key.
-    genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+   # Make sure to add your Gemini API key in the .env file as:
+   # GOOGLE_API_KEY=your_api_key_here
+
+   # The client will automatically load it from the environment
+   client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
    ```
+
 ## Usage
 To run the application, use the following command:
 ```sh
+cd src
 streamlit run app.py
 ```
 
